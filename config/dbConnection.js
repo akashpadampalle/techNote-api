@@ -9,3 +9,7 @@ const connectDB = async () => {
 } 
 
 module.exports = connectDB
+
+// mongoose.connect(process.env.DATABASE_URI)
+
+// module.exports = mongoose.connection

@@ -1,0 +1,73 @@
+#getting all the users
+GET http://localhost:3500/users
+
+###
+
+POST http://localhost:3500/users
+Content-Type: application/json
+
+{
+    "username": "chank",
+    "password": "123",
+    "roles": ["Admin"]
+}
+
+###
+PATCH http://localhost:3500/users
+Content-Type: application/json
+
+{
+    "id": "65235ce975f2d4bf72beb88f",
+    "username": "chunk",
+    "roles": ["Employee"],
+    "password": "00000",
+    "active": true
+}
+
+###
+DELETE http://localhost:3500/users
+Content-Type: application/json
+
+{
+    "id": "652374e1de2c1690276e21f7"
+}
+
+
+###
+
+#get all Notes
+GET http://localhost:3500/notes
+
+###
+# create new note
+POST http://localhost:3500/notes
+Content-Type: application/json
+
+{
+    "userId": "652374e1de2c1690276e21f7",
+    "title": "special",
+    "text": "i want to have something\n1.bread\n2.better"
+}
+
+
+###
+# update note
+PATCH  http://localhost:3500/notes
+Content-Type: application/json
+
+{
+    "id": "6523e79eed667be8cf05ffdb",
+    "userId": "652374e1de2c1690276e21f7",
+    "title": "shop for grocery",
+    "text": "i want to have something\n1.bread\n2.better",
+    "completed": "false"
+}
+
+###
+# delete note
+DELETE  http://localhost:3500/notes
+Content-Type: application/json
+
+{
+    "id": "6523e42c27cb55327ca540ac"
+}

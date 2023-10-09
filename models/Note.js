@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const AutoIncrement = require('mongoose-sequence')(mongoose)
+// const AutoIncrement = require('mongoose-sequence')(mongoose)
+
 
 const noteSchema = new mongoose.Schema({
     user: {
@@ -25,10 +26,10 @@ const noteSchema = new mongoose.Schema({
 }
 );
 
-noteSchema.plugin(AutoIncrement, {
-    inc_field: 'ticket',
-    id: 'ticketNums',
-    start_seq: 500
-})
+// noteSchema.plugin(AutoIncrement, {
+//     id:'ticket_counter', 
+//     inc_field: 'ticket', 
+//     disable_hooks: true
+// })
 
 module.exports = mongoose.model('Note', noteSchema)
