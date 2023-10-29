@@ -7,9 +7,9 @@ POST http://localhost:3500/users
 Content-Type: application/json
 
 {
-    "username": "chank",
+    "username": "hunk",
     "password": "123",
-    "roles": ["Admin"]
+    "roles": ["Employee"]
 }
 
 ###
@@ -44,9 +44,9 @@ POST http://localhost:3500/notes
 Content-Type: application/json
 
 {
-    "userId": "652374e1de2c1690276e21f7",
-    "title": "special",
-    "text": "i want to have something\n1.bread\n2.better"
+    "userId": "6532571290ee461371908eca",
+    "title": "hunks work",
+    "text": "something"
 }
 
 
@@ -70,4 +70,16 @@ Content-Type: application/json
 
 {
     "id": "6523e42c27cb55327ca540ac"
+}
+
+
+
+###
+# authentication tests
+POST http://localhost:3500/auth
+Content-Type: application/json
+
+{
+    "username": "hunk",
+    "password": "123"
 }

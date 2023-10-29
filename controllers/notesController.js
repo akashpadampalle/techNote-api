@@ -36,7 +36,9 @@ const getAllNotes = asyncHandler(async (req, res) => {
  */
 const createNote = asyncHandler(async (req, res) => {
 
-    const { userId, title, text } = req.body
+    const { user : userId, title, text } = req.body
+
+    
 
     // check data 
     if (!userId || !title || !text) {
@@ -47,6 +49,7 @@ const createNote = asyncHandler(async (req, res) => {
     const duplicate = await Note.findOne({ title }).lean().exec()
 
     if (duplicate) {
+        
         return res.status(409).json({ message: 'Duplicate note title' })
     }
 
@@ -84,7 +87,9 @@ const createNote = asyncHandler(async (req, res) => {
  * @access Private
  */
 const updateNote = asyncHandler(async (req, res) => {
-    const { id, userId, title, text, completed } = req.body
+    const { id, user: userId, title, text, completed } = req.body
+
+    console.log(req.body)
 
     // check 
     if (!id || !userId || !title || !text || typeof completed !== 'boolean') {
